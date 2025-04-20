@@ -2,6 +2,7 @@
 import { Sidebar } from "@/components/layout/Sidebar";
 import { Header } from "@/components/layout/Header";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const Index = () => {
   return (
@@ -20,7 +21,9 @@ const Index = () => {
                   PM
                 </div>
                 <div>
-                  <h2 className="text-xl font-bold">Hello Peter</h2>
+                  <h2 className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    Hello Peter
+                  </h2>
                   <p className="text-gray-600">You have 5 tasks today</p>
                 </div>
               </div>
@@ -31,7 +34,7 @@ const Index = () => {
               <div className="flex justify-between items-start mb-4">
                 <div>
                   <p className="text-sm text-gray-600">NEW TASKS</p>
-                  <h3 className="text-3xl font-bold">34</h3>
+                  <h3 className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">34</h3>
                 </div>
                 <span className="text-red-500">-5.67%</span>
               </div>
@@ -42,7 +45,7 @@ const Index = () => {
               <div className="flex justify-between items-start mb-4">
                 <div>
                   <p className="text-sm text-gray-600">COMPLETED</p>
-                  <h3 className="text-3xl font-bold">104</h3>
+                  <h3 className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">104</h3>
                 </div>
                 <span className="text-green-500">+14.88%</span>
               </div>
@@ -52,15 +55,17 @@ const Index = () => {
             {/* Task List */}
             <div className="glass-card p-6 rounded-2xl col-span-full">
               <div className="flex justify-between items-center mb-6">
-                <h3 className="text-lg font-bold">LIST OF TASKS</h3>
+                <h3 className="text-lg font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  LIST OF TASKS
+                </h3>
                 <Button variant="ghost" size="sm">
                   Full list →
                 </Button>
               </div>
 
               <div className="space-y-4">
-                <div className="flex items-center gap-4 p-4 bg-white/50 rounded-xl">
-                  <input type="checkbox" className="w-5 h-5 rounded-lg" />
+                <div className="flex items-center gap-4 p-4 bg-white/50 rounded-xl hover:bg-white/70 transition-all">
+                  <Checkbox />
                   <div className="flex-1">
                     <h4 className="font-medium">Meeting for case 1</h4>
                     <p className="text-sm text-gray-600">7:00 - 8:30</p>

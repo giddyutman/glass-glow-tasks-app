@@ -5,19 +5,19 @@
 
 @layer base {
   :root {
-    --background: 24 100% 95%;
+    --background: 24 100% 97%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 24 95% 75%;
+    --primary: 24 95% 65%;
     --primary-foreground: 210 40% 98%;
     --secondary: 24 70% 85%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 24 90% 90%;
+    --accent: 24 90% 95%;
     --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -34,13 +34,19 @@
   }
 
   .glass-card {
-    @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-lg;
-    box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.05),
-                -8px -8px 30px rgba(255, 255, 255, 0.8);
+    @apply bg-white/80 backdrop-blur-lg border border-white/30 shadow-lg transition-all duration-200;
+    box-shadow: 
+      8px 8px 30px rgba(0, 0, 0, 0.04),
+      -8px -8px 30px rgba(255, 255, 255, 0.9);
+  }
+
+  .glass-card:hover {
+    @apply bg-white/90;
+    transform: translateY(-2px);
   }
 
   .nav-item {
-    @apply flex items-center gap-3 px-4 py-2 rounded-lg text-gray-700 hover:bg-primary/10 transition-all;
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl text-gray-700 hover:bg-primary/10 transition-all;
   }
 
   .nav-item.active {
