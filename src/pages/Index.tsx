@@ -1,15 +1,16 @@
 
-import { Sidebar } from "@/components/layout/Sidebar";
+import { MainSidebar } from "@/components/layout/MainSidebar";
 import { Header } from "@/components/layout/Header";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { SidebarInset } from "@/components/ui/sidebar";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen bg-background">
-      <Sidebar />
+    <>
+      <MainSidebar />
       
-      <div className="flex-1 flex flex-col">
+      <SidebarInset>
         <Header />
         
         <main className="flex-1 p-4">
@@ -17,8 +18,16 @@ const Index = () => {
             {/* Welcome Card */}
             <div className="glass-card p-6 rounded-2xl col-span-full">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold">
-                  PM
+                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold overflow-hidden">
+                  <img 
+                    src="https://github.com/shadcn.png" 
+                    alt="User" 
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.src = "";
+                      e.currentTarget.alt = "PM";
+                    }}
+                  />
                 </div>
                 <div>
                   <h2 className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -78,8 +87,8 @@ const Index = () => {
             </div>
           </div>
         </main>
-      </div>
-    </div>
+      </SidebarInset>
+    </>
   );
 };
 

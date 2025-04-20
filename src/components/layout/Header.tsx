@@ -10,8 +10,9 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const isMobile = useIsMobile();
@@ -23,18 +24,9 @@ export const Header = () => {
 
   return (
     <header className="glass-card flex items-center justify-between gap-4 p-4 m-4 rounded-2xl">
-      {isMobile && (
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="lg:hidden">
-              <Menu size={20} />
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-            {/* Sidebar content will go here */}
-          </SheetContent>
-        </Sheet>
-      )}
+      <div className="flex items-center">
+        <SidebarTrigger className="mr-2" />
+      </div>
       
       <div className="flex items-center flex-1 max-w-xl">
         <div className="relative w-full hidden md:block">
@@ -80,7 +72,9 @@ export const Header = () => {
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Settings</DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link to="/settings">Settings</Link>
+            </DropdownMenuItem>
             <DropdownMenuItem>Logout</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
